@@ -12,9 +12,9 @@
     "type":"normal"
   },
   {
-    "name":"skip",
-    "image":"./assets/skip1.gif",
-    "description":"Run away from your responsibilities. End your turn without drawing.",
+    "name":"backlash",
+    "image":"./assets/backlash1.gif",
+    "description":"Attack the previous player, come on.. you know you wanna!",
     "type":"normal"
   },
   {
@@ -36,9 +36,9 @@
     "type":"normal"
   },
   {
-    "name":"skip",
-    "image":"./assets/skip2.gif",
-    "description":"Run away from your responsibilities. End your turn without drawing.",
+    "name":"backlash",
+    "image":"./assets/backlash2.gif",
+    "description":"Attack the previous player, come on.. you know you wanna!",
     "type":"normal"
   },
   {
@@ -59,9 +59,9 @@
     "type":"normal"
   },
   {
-    "name":"skip",
-    "image":"./assets/skip3.gif",
-    "description":"Run away from your responsibilities. End your turn without drawing.",
+    "name":"backlash",
+    "image":"./assets/backlash3.gif",
+    "description":"Attack the previous player, come on.. you know you wanna!",
     "type":"normal"
   },
   {
@@ -82,9 +82,9 @@
     "type":"normal"
   },
   {
-    "name":"skip",
-    "image":"./assets/skip4.gif",
-    "description":"Run away from your responsibilities. End your turn without drawing.",
+    "name":"backlash",
+    "image":"./assets/backlash4.gif",
+    "description":"Attack the previous player, come on.. you know you wanna!",
     "type":"normal"
   },
   {
