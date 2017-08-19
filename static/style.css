@@ -220,6 +220,7 @@ li {
 .lobbybutton {
   opacity: 65%;
   border-radius: 20px;
+  margin-bottom: 20px;
 }
 
 .login {
@@ -232,4 +233,14 @@ li {
 
 #friends {
   color: white;
+  max-width: 300px;
+  margin: auto;
+}
+
+#friend-items {
+  text-align: left;
+}
+
+#friend-pic {
+  border-radius: 50%;
 }

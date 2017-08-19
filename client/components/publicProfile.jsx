@@ -35,6 +35,7 @@ class PublicProfile extends Component {
     this.displayUserInfo();
   }
 
+  //TODO: Create backlink to User Profile
 
 
   render() {
@@ -65,7 +66,8 @@ class PublicProfile extends Component {
         </div>
 
         <div >
-          {/* <Link to='/'  ><button class="lobbybutton"> Back to Lobby </button></Link> */}
+          <Link to='/'  ><button className="lobbybutton"> Back to Lobby </button></Link>
+          <Link to='/profile'  ><button className="lobbybutton"> Back to Profile </button></Link>
         </div>
       </div>
     )
