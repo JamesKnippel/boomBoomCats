@@ -23,10 +23,10 @@ class PublicProfile extends Component {
       .then(result => {
         console.log('Profile info: ', result);
         this.setState({ 
-          username: result.data[0].name,
-          picture: result.data[0].picture,
-          wins: result.data[0].wins,
-          losses: result.data[0].losses
+          username: result.data[1].name,
+          picture: result.data[1].picture,
+          wins: Math.floor(Math.random() * 10),
+          losses: Math.floor(Math.random() * 10)
         })
       })
   }

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FriendsList from './FriendsList.jsx';
+import axios from 'axios';
 
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
+
       wins: '',
       losses: ''
     }
@@ -20,9 +22,22 @@ class Profile extends Component {
 
   componentDidMount() {
     console.log('mounted')
+    this.displayUserInfo();
   }
 
-
+  displayUserInfo() {
+    let userProfilePath = `/api/publicprofiles/${this.props.user}`
+    axios.get(userProfilePath)
+      .then(result => {
+        console.log('Profile info: ', result);
+        this.setState({ 
+          username: result.data[1].name,
+          picture: result.data[1].picture,
+          wins: Math.floor(Math.random() * 10),
+          losses: Math.floor(Math.random() * 10)
+        })
+      })
+  }
 
   render() {
     console.log('this is state', this.state)
