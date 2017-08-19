@@ -10,6 +10,7 @@ export default class Game extends React.Component {
   constructor(props) {
     super(props)
     this.attackNextPlayer = cardFunctions.attackNextPlayer.bind(this)
+    this.attackLastPlayer = cardFunctions.attackLastPlayer.bind(this)
     this.skipATurn = cardFunctions.skipATurn.bind(this)
     this.shuffleDeck = cardFunctions.shuffleDeck.bind(this)
     this.seeTheFuture = cardFunctions.seeTheFuture.bind(this)
@@ -153,7 +154,13 @@ export default class Game extends React.Component {
       this.reverseTurnOrder(handIndex, (turns) => {
         this.props.socket.emit('reverse', turns);
       })
+    } else if (cardname === 'backlash') {
+
+      this.attackLastPlayer(handIndex, () => {
+        this.props.socket.emit('backlash', this.state.turn, this.state.exploderCount)
+      })
     }
+
   }
 
   handleDeckClick() {
