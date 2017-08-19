@@ -82,18 +82,24 @@ module.exports = {
   },
   attackNextPlayer: function (cardPosition, cb) { //add extra turn on first element
     let gameTurns = this.state.turn.slice()
+    console.log('ATTACK #1: gameTurns.length = ', gameTurns, gameTurns.length);
     let myself = gameTurns[0];
+    console.log('ATTACK #2: myself = ', myself);
     let attackedPlayerTurnIndex = 1
-    console.log('attack')
+    console.log('ATTACK #3: attack')
     for (let i = 1; i < gameTurns.length; i++) {
       if (myself !== gameTurns[i]) {
+        console.log('ATTACK #4: myself !== gameTurns[i] is true', gameTurns[i]);
         attackedPlayerTurnIndex = i;
         break;
       }
+      console.log('ATTACK # 4.5: myself !== gameTurns[i] is false', gameTurns[i]);
     }
     let attackedPlayer = this.state.turn.slice(attackedPlayerTurnIndex, attackedPlayerTurnIndex + 1)
+    console.log('ATTACK #5: attackedPlayer = ', attackedPlayer);
     gameTurns.splice(attackedPlayerTurnIndex, 0, attackedPlayer[0])
     let newTurns = gameTurns.slice()
+    console.log('ATTACK #6: newTurns', newTurns);
     this.setState({
       turn: newTurns
     }, () => {
@@ -102,6 +108,25 @@ module.exports = {
       this.endTurn();
     })
   },
+
+
+  attackLastPlayer: function (cardPosition, cb) { //add extra turn on first element
+    let gameTurns = this.state.turn.slice()
+    let myself = gameTurns[0];
+    let attackedPlayerTurnIndex = (0 -1) + gameTurns.length
+    console.log('attack last player')
+    let newTurns = gameTurns.slice()
+    newTurns.push(gameTurns[gameTurns.length -1])
+    this.setState({
+      turn: newTurns
+    }, () => {
+      this.discardCard(cardPosition);
+      cb();
+      this.endTurn();
+    })
+  },
+
+
   skipATurn: function (cardPosition) {
     console.log('skip')
     this.discardCard(cardPosition)
@@ -142,33 +167,33 @@ module.exports = {
     })
   },
 
-attackNextPlayer: function (cardPosition, cb) { //add extra turn on first element
-  let gameTurns = this.state.turn.slice()
-  let myself = gameTurns[0];
-  let attackedPlayerTurnIndex = 1
-  console.log('attack')
-  for (let i = 1; i < gameTurns.length; i++) {
-    if (myself !== gameTurns[i]) {
-      attackedPlayerTurnIndex = i;
-      break;
+  attackNextPlayer: function (cardPosition, cb) { //add extra turn on first element
+    let gameTurns = this.state.turn.slice()
+    let myself = gameTurns[0];
+    let attackedPlayerTurnIndex = 1
+    console.log('attack')
+    for (let i = 1; i < gameTurns.length; i++) {
+      if (myself !== gameTurns[i]) {
+        attackedPlayerTurnIndex = i;
+        break;
+      }
     }
+    let attackedPlayer = this.state.turn.slice(attackedPlayerTurnIndex, attackedPlayerTurnIndex + 1)
+    gameTurns.splice(attackedPlayerTurnIndex, 0, attackedPlayer[0])
+    let newTurns = gameTurns.slice()
+    this.setState({
+      turn: newTurns
+    }, () => {
+      this.discardCard(cardPosition);
+      cb();
+      this.endTurn();
+    })
+  },
+  
+  skipATurn: function (cardPosition) {
+    console.log('skip')
+    this.discardCard(cardPosition)
+    this.endTurn()
   }
-  let attackedPlayer = this.state.turn.slice(attackedPlayerTurnIndex, attackedPlayerTurnIndex + 1)
-  gameTurns.splice(attackedPlayerTurnIndex, 0, attackedPlayer[0])
-  let newTurns = gameTurns.slice()
-  this.setState({
-    turn: newTurns
-  }, () => {
-    this.discardCard(cardPosition);
-    cb();
-    this.endTurn();
-  })
-},
-
-skipATurn: function (cardPosition) {
-  console.log('skip')
-  this.discardCard(cardPosition)
-  this.endTurn()
-}
-
+  
 }
