@@ -8,12 +8,14 @@
   border: 1px solid black;
   overflow: auto;
   height: 690px;
-  width: 300px; 
+  width: 400px; 
   top: 0;
   left: 0;
+  opacity: 55%;
   /* max-height: 100%; */
-  background-color: white;
-  margin-top: 10px;
+  background-color: #f3f3f3;
+  margin-top: 25px;
+  border-radius: 20px;
 }
 
 ul { 
@@ -27,9 +29,15 @@ ul {
 }
 
 input {
-  width: 300px;
+  width: 400px;
   font-family: 'Oswald', sans-serif;
   letter-spacing: 0;
+  border-radius: 20px;
+  margin-top: 3px;
+}
+
+.inputtext{
+  text-align: center;
 }
 
 .loader {
@@ -59,7 +67,14 @@ input {
 }
 .profilepicture {
 text-align: center;
+border-radius: 15px;
 }
+
+.profilepictureimg {
+  text-align: center;
+  border-radius: 15px;
+  }
+  
 
 .profiledata {
   text-align: center;
@@ -83,7 +98,9 @@ body {
   letter-spacing: 2px;
   /* background-color: rgb(51,51,51) */
   background-image: url('assets/catExplosionBg.png');
-  background-size: cover;
+  background-repeat: no-repeat;
+  /* Set rules to fill background */
+
 }
 
 h1 {
@@ -99,6 +116,7 @@ h2 {
 h3 {
   font-size: 40px;
   color: #f4f4f4;
+  text-align: center;
 }
 
 h4 {
@@ -118,6 +136,7 @@ li {
 
 #loadingScreenGif {
   margin-top: 40px;
+  border-radius: 20px;
 }
 
 .loadedOpp {
@@ -217,7 +236,26 @@ li {
   ====================================
 */
 
+.viewprofile {
+  opacity: 65%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin: 20px;
+}
+
 .lobbybutton {
+  opacity: 65%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.logout {
+  opacity: 65%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.logoutroom {
   opacity: 65%;
   border-radius: 20px;
   margin-bottom: 20px;
@@ -239,6 +277,13 @@ li {
 
 #friend-items {
   text-align: left;
+  color :#F0F8FF;
+}
+
+.friendtext {
+  color :#F0F8FF;
+  font-size: 15px;
+  display: inline;
 }
 
 #friend-pic {

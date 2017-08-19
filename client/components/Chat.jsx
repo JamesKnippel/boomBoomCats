@@ -52,7 +52,7 @@ export default class Chat extends React.Component {
         <div className='row'>
           <div className='col-sm-12'>
             <form action='' id='chatForm' onSubmit={this.handleSubmit}>
-              <input autoComplete='off' ref='message' placeholder='Enter message...' />
+              <input className="inputtext" autoComplete='off' ref='message' placeholder='Enter message...' />
             </form>
           </div>
         </div>

@@ -41,11 +41,13 @@ export default class Room extends React.Component {
             <Chat socket={this.state.socket} />
           </div>
 
-          <Link to = '/'><button onClick={this.props.logout}>Logout</button></Link>
 
-          <Link to = '/profile'  ><button onClick={()=>this.state.socket.emit('removeUser')}> View your Profile </button></Link>
         </div>
 
+          <div>
+            <Link to='/'><button className="logoutroom" onClick={this.props.logout}>Logout</button></Link>
+            <Link to='/profile'  ><button className="viewprofile" onClick={() => this.state.socket.emit('removeUser')}> View your Profile </button></Link>
+          </div>
       </div>
 
     )

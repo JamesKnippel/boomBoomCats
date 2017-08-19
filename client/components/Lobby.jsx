@@ -29,7 +29,7 @@ class Lobby extends Component {
                                         <h3 className='lobbyText profile-link'>View Profile</h3>
                                     </Link>
                                     <Link to='/'>
-                                        <button onClick={this.props.logout}>logout</button>
+                                        <button className ="logout" onClick={this.props.logout}>logout</button>
                                     </Link>
                                 </div>
                             }
