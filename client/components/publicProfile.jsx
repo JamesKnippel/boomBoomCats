@@ -9,7 +9,9 @@ class PublicProfile extends Component {
     this.state = {
       user: window.location.pathname.slice(16),
       username: window.location.pathname.slice(16),
-      picture: ''
+      picture: '',
+      wins: '',
+      losses: ''
     }
     this.displayUserInfo = this.displayUserInfo.bind(this);
 
@@ -51,14 +53,14 @@ class PublicProfile extends Component {
         </div>
 
         <div>
-          <img class="profilepicture" src={this.state.picture} alt=""></img>
+          <img className="profilepicture" src={this.state.picture} alt=""></img>
         </div>
 
 
 
         <div>
           {/* <h2>{this.props.user}</h2><br/> */}
-          {/* <p>Wins: {this.state.wins} </p> <p> Losses: {this.state.losses} </p> */}
+          <p>Wins: {this.state.wins} </p> <p> Losses: {this.state.losses} </p>
 
 
         </div>
