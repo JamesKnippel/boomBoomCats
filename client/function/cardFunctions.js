@@ -114,17 +114,7 @@ module.exports = {
     let gameTurns = this.state.turn.slice()
     let myself = gameTurns[0];
     let attackedPlayerTurnIndex = (0 -1) + gameTurns.length
-    console.log('attack')
-    console.log('gameTurns.length = ', gameTurns.length)
-    // for (let i = 1; i < gameTurns.length; i++) {
-    //   if (myself !== gameTurns[i]) {
-    //     attackedPlayerTurnIndex = i;
-    //     break;
-    //   }
-    // }
-    // let attackedPlayer = this.state.turn.slice(attackedPlayerTurnIndex, attackedPlayerTurnIndex + 1)
-    // gameTurns.splice(attackedPlayerTurnIndex, 0, attackedPlayer[0])
-    // let newTurns = gameTurns.slice()
+    console.log('attack last player')
     let newTurns = gameTurns.slice()
     newTurns.push(gameTurns[gameTurns.length -1])
     this.setState({
