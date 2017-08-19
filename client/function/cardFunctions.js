@@ -167,6 +167,7 @@ module.exports = {
     })
   },
 
+<<<<<<< HEAD
 attackNextPlayer: function (cardPosition, cb) { //add extra turn on first element
   let gameTurns = this.state.turn.slice()
   let myself = gameTurns[0];
@@ -196,4 +197,35 @@ skipATurn: function (cardPosition) {
   this.endTurn()
 }
 
+=======
+  attackNextPlayer: function (cardPosition, cb) { //add extra turn on first element
+    let gameTurns = this.state.turn.slice()
+    let myself = gameTurns[0];
+    let attackedPlayerTurnIndex = 1
+    console.log('attack')
+    for (let i = 1; i < gameTurns.length; i++) {
+      if (myself !== gameTurns[i]) {
+        attackedPlayerTurnIndex = i;
+        break;
+      }
+    }
+    let attackedPlayer = this.state.turn.slice(attackedPlayerTurnIndex, attackedPlayerTurnIndex + 1)
+    gameTurns.splice(attackedPlayerTurnIndex, 0, attackedPlayer[0])
+    let newTurns = gameTurns.slice()
+    this.setState({
+      turn: newTurns
+    }, () => {
+      this.discardCard(cardPosition);
+      cb();
+      this.endTurn();
+    })
+  },
+  
+  skipATurn: function (cardPosition) {
+    console.log('skip')
+    this.discardCard(cardPosition)
+    this.endTurn()
+  }
+  
+>>>>>>> Try to fix merge conflict
 }
