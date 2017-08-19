@@ -22,7 +22,9 @@ class PublicProfile extends Component {
         console.log('Profile info: ', result);
         this.setState({ 
           username: result.data[0].name,
-          picture: result.data[0].picture
+          picture: result.data[0].picture,
+          wins: result.data[0].wins,
+          losses: result.data[0].losses
         })
       })
   }
@@ -56,7 +58,7 @@ class PublicProfile extends Component {
 
         <div>
           {/* <h2>{this.props.user}</h2><br/> */}
-          <p>Wins:</p> <p> Losses: </p>
+          {/* <p>Wins: {this.state.wins} </p> <p> Losses: {this.state.losses} </p> */}
 
 
         </div>

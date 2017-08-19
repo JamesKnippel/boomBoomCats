@@ -5,6 +5,10 @@ import FriendsList from './FriendsList.jsx';
 class Profile extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      wins: '9001',
+      losses: '0'
+    }
 
     this.getFriends = this.getFriends.bind(this);
   }
@@ -21,7 +25,7 @@ class Profile extends Component {
 
 
   render() {
-    console.log(this.state)
+    console.log('this is state', this.state)
     console.log('props:', this.props)
     return (
       <div className="profile">
@@ -37,7 +41,7 @@ class Profile extends Component {
 
         <div className="profiledata">
           <h2>{this.props.user}</h2><br/>
-          <p>Wins:</p> <p> Losses: </p>
+          <p>Wins: {this.state.wins} </p> <p> Losses: {this.state.losses} </p>
 
 
         </div>

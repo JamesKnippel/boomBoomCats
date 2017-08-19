@@ -20,6 +20,8 @@ export default class App extends React.Component {
       user: '',
       picture: '',
       currentFriend: '',
+      // wins: '',
+      // losses: ''
     }
     this.handleLogout = this.handleLogout.bind(this);
     this.changeFriend = this.changeFriend.bind(this);
@@ -51,7 +53,7 @@ export default class App extends React.Component {
   handleLogout() {
     this.auth.logout();
   }
-
+//wins={this.state.wins} losses={this.state.losses}
   changeFriend() {
     //write function to handle currentFriend in the state of App.jsx, so 
     //that it can be passed down to Friend to update when link is clicked
@@ -63,7 +65,7 @@ export default class App extends React.Component {
         <div>
           <Route exact path='/' render={() => <Lobby logout={this.handleLogout} auth={this.auth} />} />
           <Route path='/room' render={() => <Room logout={this.handleLogout} user={this.state.user} picture={this.state.picture} />} />
-          <Route path='/profile' render={() => <Profile user={this.state.user} picture={this.state.picture} changeFriend={this.changeFriend} />} />
+          <Route path='/profile' render={() => <Profile user={this.state.user} picture={this.state.picture} changeFriend={this.changeFriend}  />} />
           <Route path='/publicprofiles/:username' render={() => <PublicProfile />} />
         </div>
 
