@@ -118,6 +118,10 @@ io.on('connection', function(socket) {
     io.emit('update turn', turns)
   })
 
+  socket.on('backlash', function(newTurns, newBombCount) {
+    io.emit('update turn', newTurns, newBombCount)
+  })
+
 })
 
 MongoClient.connect(dbURL, (err, database) => {
