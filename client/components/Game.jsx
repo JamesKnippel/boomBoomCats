@@ -154,7 +154,7 @@ export default class Game extends React.Component {
       this.reverseTurnOrder(handIndex, (turns) => {
         this.props.socket.emit('reverse', turns);
       })
-    } else if (cardname === 'backlash') {
+    } else if (cardName === 'backlash') {
 
       this.attackLastPlayer(handIndex, () => {
         this.props.socket.emit('backlash', this.state.turn, this.state.exploderCount)
